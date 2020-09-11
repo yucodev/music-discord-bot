@@ -24,15 +24,15 @@ async def on_message(message):
 
 @bot.command(pass_context = True)
 async def connect(ctx):
-    canal = ctx.message.author.voice.channnel
-    if not canal:
+    channel = ctx.message.author.voice.channel
+    if not channel:
         await ctx.send('You are not connected to any channel')
         return
     voz = get(bot.voice_clients,guild=ctx.guild)
     if voz and voz.is_connected():
-        await voz.move_to(canal)
+        await voz.move_to(channel)
     else:
-        voz = await canal.connect()
+        voz = await channel.connect()
 
 token = config.token
 bot.run(token)
