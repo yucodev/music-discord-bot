@@ -13,8 +13,10 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message == bot.user:
+    if message.author == bot.user:
         return
+    if message.author.bot: return
+
     if message.content.startswith('Hola'):
         await message.channel.send('Holaaa!')
     if message.content.startswith('Hello'):
