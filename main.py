@@ -4,8 +4,8 @@ from discord.utils import get
 import config
 import asyncio
 
-bot = commands.Bot(command_prefix = '/')
-client = discord.Client()
+bot = commands.Bot(command_prefix = '!')
+# client = discord.Client()
 
 @bot.event
 async def on_ready():
