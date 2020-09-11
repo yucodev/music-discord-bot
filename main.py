@@ -11,14 +11,14 @@ client = discord.Client()
 async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
 
-@bot.event
+@client.event
 async def on_message(message):
     if message == bot.user:
         return
     if message.content.startswith('Hola'):
         await message.channel.send('Holaaa!')
-	if message.content.startswith('Hello'):
-		await message.channel.send('Helooo!')
+    if message.content.startswith('Hello'):
+        await message.channel.send('Helooo!')
 
 @bot.command(pass_context = True)
 async def conectar(ctx):
