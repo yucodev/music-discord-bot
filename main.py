@@ -21,7 +21,7 @@ async def on_message(message):
         await message.channel.send('Helooo!')
 
 @bot.command(pass_context = True)
-async def conectar(ctx):
+async def connect(ctx):
     canal = ctx.message.author.voice.channnel
     if not canal:
         await ctx.send('You are not connected to any channel')
